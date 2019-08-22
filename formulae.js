@@ -20,6 +20,10 @@ function Epley(weight, reps){
     return weight * ( 1 + (0.0333 * reps));
 }
 
+function EpleyAlt(weight, reps){
+    return (weight * reps * 0.0333) + weight;
+}
+
 function Lombardi(weight, reps){
     return weight * Math.pow(reps, 0.1);
 }
@@ -38,6 +42,7 @@ module.exports = {
     Wathan,
     Lander,
     Epley,
+    EpleyAlt,
     Lombardi,
     Mayhew,
     OConner
