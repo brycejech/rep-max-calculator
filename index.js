@@ -1,6 +1,6 @@
 'use strict';
 
-const formulae_coefficients = require('./coefficients');
+const multipliers = require('./multipliers');
 
 function calcRepMaxes(opt={}){
     const { reps, weight } = opt;
@@ -10,9 +10,9 @@ function calcRepMaxes(opt={}){
 
     const data = {};
 
-    for(const groupName in formulae_coefficients){
+    for(const groupName in multipliers){
 
-        const group    = formulae_coefficients[groupName],
+        const group    = multipliers[groupName],
               repMaxes = {};
         
         const oneRepMax = reps === 1 ? weight : Math.round(weight * group[reps]);

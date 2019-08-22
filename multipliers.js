@@ -1,9 +1,8 @@
 'use strict';
 
-const formula_coefficients = {
+const multipliers = {
     Brzycki: {
-        // 1RM = (Weight Lifted) / (1.0278 - (0.0278 * #Reps))
-        1:  1.000,
+        1:  1,
         2:  1.029,
         3:  1.059,
         4:  1.091,
@@ -20,8 +19,7 @@ const formula_coefficients = {
         15: 1.637
     },
     Epley: {
-        // 1RM = (Weight Lifted * #Reps * 0.033) + Weight Lifted
-        1:  1.000,
+        1:  1,
         2:  1.066,
         3:  1.099,
         4:  1.132,
@@ -38,8 +36,7 @@ const formula_coefficients = {
         15: 1.495
     },
     Lander: {
-        // 1RM = (Weight Lifted) / (1.013 - (0.0267123 * #Reps))
-        1:  1.000,
+        1:  1,
         2:  1.042,
         3:  1.072,
         4:  1.104,
@@ -56,7 +53,6 @@ const formula_coefficients = {
         15: 1.633
     },
     Wathan: {
-        // (100 * Weight Lifted) / (48.8 + (53.8 * Math.exp(-0.075 * #Reps)))
         1:  1,
         2:  1.051,
         3:  1.090,
@@ -74,7 +70,6 @@ const formula_coefficients = {
         15: 1.509
     },
     Lombardi: {
-        // Weight Lifted * Math.pow(#Reps, 0.1)
         1:  1,
         2:  1.072,
         3:  1.116,
@@ -92,7 +87,6 @@ const formula_coefficients = {
         15: 1.311
     },
     OConner: {
-        // Weight Lifted * (1 + (#Reps / 40))
         1:  1,
         2:  1.050,
         3:  1.075,
@@ -110,7 +104,6 @@ const formula_coefficients = {
         15: 1.375
     },
     Mayhew: {
-        // (100 * Weight Lifted) / (52.2 + (41.9 * Math.exp(-0.055 * #Reps)))
         1:  1,
         2:  1.114,
         3:  1.140,
@@ -129,4 +122,4 @@ const formula_coefficients = {
     }
 }
 
-module.exports = formula_coefficients;
+module.exports = multipliers;
