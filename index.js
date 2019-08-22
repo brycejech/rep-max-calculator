@@ -2,7 +2,7 @@
 
 const formulae_coefficients = require('./coefficients');
 
-function calcRepMax(opt={}){
+function calcRepMaxes(opt={}){
     const { reps, weight } = opt;
 
     if(!(reps && weight))        throw new Error('Must supply reps and weight');
@@ -15,10 +15,10 @@ function calcRepMax(opt={}){
         const group    = formulae_coefficients[groupName],
               repMaxes = {};
         
-        const oneRepMax = reps === 1 ? weight : Math.round(weight / group[reps]);
+        const oneRepMax = reps === 1 ? weight : Math.round(weight * group[reps]);
     
         Object.keys(group).forEach(repMax => {
-            repMaxes[repMax] = Math.round(oneRepMax * group[repMax]);
+            repMaxes[repMax] = Math.round(oneRepMax / group[repMax]);
         });
 
         data[groupName] = repMaxes;
@@ -27,6 +27,6 @@ function calcRepMax(opt={}){
     return data;
 }
 
-const maxes = calcRepMax({ reps: 10, weight: 225 });
+const maxes = calcRepMaxes({ reps: 10, weight: 225 });
 
 console.log(JSON.stringify(maxes, null, 2));
