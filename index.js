@@ -27,6 +27,8 @@ function calcRepMaxes(opt={}){
     return data;
 }
 
+module.exports = calcRepMaxes;
+
 const maxes = calcRepMaxes({ reps: 10, weight: 225 });
 
-console.log(JSON.stringify(maxes, null, 2));
+//console.log(JSON.stringify(maxes, null, 2));
